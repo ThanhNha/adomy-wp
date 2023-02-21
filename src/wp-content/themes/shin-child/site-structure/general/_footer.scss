@@ -1,0 +1,42 @@
+#footer {
+  font-weight: 300;
+  .footer-menu {
+    a {
+      span {
+        font-size: 14px;
+        color: #fff;
+        font-weight: 300;
+      }
+      &:hover {
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .absolute-footer {
+    display: none;
+  }
+  form {
+    position: relative;
+    input {
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .wpcf7-spinner {
+      display: none;
+    }
+    input[type="submit"] {
+      background: $red;
+      margin-right: 0;
+      border-radius: 5px;
+
+      @include mobile {
+        position: absolute;
+        right: 0;
+        top: 0px;
+        border-radius: 0px 5px 5px 0px;
+      }
+    }
+  }
+}

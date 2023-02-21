@@ -1,0 +1,268 @@
+.touch-scroll-table {
+  box-shadow: none;
+}
+.wrapper-form-order-list {
+  display: flex;
+  justify-content: center;
+
+  @include tablet {
+    justify-content: flex-end;
+  }
+  .search-form-order {
+    position: relative;
+    max-width: 300px;
+    display: flex;
+    input {
+      margin-bottom: 0;
+    }
+    input[type="submit"] {
+      text-transform: inherit;
+      font-size: 14px;
+    }
+  }
+}
+.woocommerce-orders-table {
+  thead th {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+    span {
+      font-size: 15px;
+      font-weight: 600;
+      color: $main;
+      text-transform: initial;
+    }
+  }
+  tbody td {
+    font-size: 15px;
+    color: $main;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    span.amount {
+      color: $main;
+      font-weight: 400;
+    }
+  }
+}
+.woocommerce-order-details {
+  padding-top: 20px;
+
+  .woocommerce-order-details-title {
+    color: $main;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .woocommerce-table--order-details {
+    .woocommerce-table__line-item {
+      .active > .toggle {
+        transform: none;
+      }
+      .accordion-title.active {
+        background: #fff;
+        font-weight: normal;
+        color: $main;
+        .icon {
+          button {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      .accordion-title {
+        padding: 0;
+        border: none;
+        .wrapper-line-item {
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          border-top: 1px solid #bebebe;
+          color: $main;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          font-size: 14px;
+          .order-name-thumbnail {
+            display: flex;
+            width: 70%;
+            .product-thumbnail {
+              width: 92px;
+              height: 92px;
+              img {
+                width: 100% !important;
+                height: 100% !important;
+              }
+            }
+            .tracking {
+              display: block;
+              font-weight: 400;
+            }
+            .product-name a {
+              font-weight: 500;
+              color: $main;
+            }
+          }
+
+          .product-total {
+            vertical-align: middle;
+          }
+          span.amount {
+            margin-top: 20px;
+            display: block;
+            font-weight: 400;
+          }
+          .icon {
+            display: flex;
+            align-items: center;
+            button {
+              background-color: transparent;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: 0;
+
+              .icon-angle-down {
+                color: $main;
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+      .accordion-inner {
+        padding-top: 0px;
+        padding: 0px;
+        padding-left: 0;
+
+        @include mobile {
+          padding-left: 20px;
+        }
+      }
+    }
+    .woocommerce-table__line-item.order_item {
+      section {
+        padding-bottom: 15px;
+        padding-top: 15px;
+        @include mobile {
+          padding-bottom: 30px;
+          padding-top: 30px;
+        }
+        .order-list-status {
+          padding-right: 0;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          @include mobile {
+            border-left: 1px solid #bebebe;
+            padding-right: 20px;
+            margin-left: 20px;
+          }
+
+          .order-list-status-wrapper {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0;
+            li.item-status {
+              &.disabled {
+                span {
+                  color: rgba(35, 53, 89, 0.4);
+                }
+                .date-status {
+                  display: none;
+                }
+                .title-status {
+                  width: 85%;
+                }
+              }
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+              &.active {
+                span {
+                  color: $main;
+                }
+              }
+              margin-bottom: 15px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              transform: translateX(0px);
+
+              @include mobile {
+                transform: translateX(-23px);
+              }
+              .icon-status {
+                width: 15%;
+                padding: 10px;
+                background: #fff;
+                img {
+                  width: 25px;
+                  height: 25px;
+                }
+              }
+              .title-status {
+                font-size: 14px;
+                display: block;
+                width: 60%;
+              }
+              .date-status {
+                font-size: 14px;
+                width: 25%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .order-details-footer {
+    padding-bottom: 1em;
+    padding-top: 1em;
+    border-bottom: 1px solid #bebebe;
+    border-top: 1px solid #bebebe;
+
+    table.order_delivery_charges {
+      margin-bottom: 0;
+      .delivery-charges-title {
+        color: #595959;
+        font-size: 14px;
+        text-transform: initial;
+        font-weight: 500;
+      }
+      .amount-title,
+      span.amount {
+        margin-top: 0;
+        color: $main;
+        text-transform: initial;
+        font-weight: 700;
+      }
+      tr {
+        th {
+          border-bottom: none;
+        }
+        td {
+          vertical-align: middle;
+          border-bottom: none;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+.woocommerce-customer-details {
+  margin-top: 1em;
+  .col {
+    padding-bottom: 0px;
+  }
+  h2.woocommerce-column__title {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .woocommerce-column__title,
+  span,
+  p,
+  address {
+    font-size: 13px;
+    color: $main;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 22px;
+  }
+}

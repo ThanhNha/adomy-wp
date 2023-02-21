@@ -1,0 +1,26 @@
+/*
+Theme Name: Flatsome Child
+Description: This is a child theme for Flatsome Theme
+Author: UX Themes
+Template: flatsome
+Version: 3.0
+*/
+
+@import "variable";
+@import "mixins";
+
+@import "header";
+@import "footer";
+@import "component";
+
+@import "home";
+@import "card";
+@import "product-detail";
+@import "categories";
+@import "cart";
+@import "checkout";
+@import "login";
+@import "account";
+@import "order-list";
+@import "contact";
+@import "help";

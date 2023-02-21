@@ -1,0 +1,149 @@
+.woocommerce {
+  label {
+    font-weight: 400;
+    color: $main;
+    .required {
+      font-weight: 400;
+      color: $main;
+    }
+  }
+  .woocommerce-billing-fields {
+    border: none;
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: $main;
+    }
+  }
+  .wrapper-billing-info {
+    .tabbed-content ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      li {
+        margin: 0;
+        a {
+          display: flex;
+          align-items: flex-start;
+
+          &::before {
+            background-color: $main;
+            width: 12px;
+            height: 12px;
+            border-radius: 100%;
+            left: 10px;
+            top: 14px;
+          }
+          p {
+            margin-bottom: 0;
+            font-weight: 400;
+            color: $main;
+            span {
+              display: block;
+            }
+          }
+          input {
+            margin-left: 0;
+            width: 20px;
+            height: 20px;
+            margin-bottom: 0;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+  .payment-method {
+    padding-top: 20px;
+    border-top: 2px solid rgba(35, 53, 89, 0.1);
+    h3 {
+      color: $main;
+      font-size: 20px;
+      font-weight: 400;
+    }
+    .wrapper-radio {
+      display: flex;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      padding-left: 40px;
+      margin-bottom: 20px;
+      label {
+        margin-bottom: 0;
+        position: relative;
+        cursor: pointer;
+        &::before {
+          content: " ";
+          position: absolute;
+          left: -16px;
+          width: 25px;
+          height: 100%;
+          transform: translateX(-100%);
+        }
+      }
+      &:hover {
+        .checkmark {
+          background: transparent;
+        }
+      }
+      & input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+      }
+      .checkmark {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $main;
+        background: transparent;
+        border-radius: 50%;
+        transform: translateY(-50%);
+        &::after {
+          content: "";
+          position: absolute;
+          display: none;
+          top: 50%;
+          left: 50%;
+          width: 10px;
+          height: 10px;
+          border-radius: 100%;
+          transform: translate(-50%, -50%);
+          background: $main;
+        }
+      }
+    }
+    .conform {
+      display: flex;
+      align-items: center;
+      padding-top: 40px;
+      border-top: 2px solid rgba(33, 64, 154, 0.1);
+      input:checked ~ .icon-checked svg {
+        display: block !important;
+      }
+      label {
+        margin-bottom: 0;
+        cursor: pointer;
+      }
+    }
+  }
+  .cart-product {
+    table {
+      .amount {
+        font-weight: 400 !important;
+      }
+      td {
+        border-bottom: none;
+      }
+    }
+  }
+}

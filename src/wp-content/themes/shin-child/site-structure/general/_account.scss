@@ -1,0 +1,49 @@
+.my-account.account {
+  padding-top: 40px;
+  .my-account-header h1 {
+    color: $main;
+    font-size: 30px;
+  }
+  fieldset {
+    legend {
+      text-transform: initial;
+      font-size: 18px;
+      font-weight: 700;
+      color: $main;
+      border-bottom: none;
+    }
+  }
+  button {
+    color: #fff;
+    font-weight: normal;
+    background-color: #233559;
+    margin-bottom: 0px;
+    padding: 5px 30px;
+    font-size: 14px;
+  }
+}
+#my-account-nav {
+  padding: 20px 25px;
+  background: #ffffff;
+  box-shadow: 0px 0px 15px rgba(33, 64, 154, 0.2);
+  display: none;
+  @include tablet {
+    display: block;
+  }
+  li {
+    &.is-active {
+      a {
+        font-weight: 700;
+      }
+    }
+    a {
+      font-size: 16px;
+      color: $main;
+      font-weight: 500;
+      text-transform: inherit;
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.plain.contact {
+  margin-bottom: 10px;
+  a {
+    color: $main;
+  }
+  a:hover {
+    color: #000;
+  }
+}
+.form-contact {
+  label {
+    color: $main;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .submit-contact {
+    input[type="submit"] {
+      padding: 0px 50px;
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.home-icon {
+  .col-inner {
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .plain {
+    width: 100%;
+    @include tablet {
+      width: 10%;
+    }
+    margin-left: 5px;
+    height: 100%;
+    display: flex;
+    .icon-box {
+      width: 100%;
+      padding: 20px;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  .flickity-button {
+    margin-top: -5% !important;
+  }
+}
+.slide-testimonial {
+}
+.home-tab-categories {
+  ul {
+    flex-flow: row;
+    list-style: none;
+    justify-content: space-between;
+    li.active {
+      a {
+        text-decoration: underline;
+        color: $main;
+      }
+    }
+    li {
+      margin-right: 30px;
+      white-space: nowrap;
+      display: block;
+
+      &:hover {
+        a {
+          color: $main;
+          text-decoration: underline;
+        }
+      }
+      a {
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(35, 53, 89, 0.5);
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+  .tab-panels {
+    display: none;
+  }
+  .flickity-button {
+    top: -10px;
+    &.previous {
+      left: -5%;
+    }
+    &.next {
+      right: -5%;
+    }
+  }
+}
+
+.ddict_btn {
+  display: none;
+}

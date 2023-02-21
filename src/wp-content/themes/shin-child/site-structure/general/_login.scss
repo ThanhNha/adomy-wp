@@ -1,0 +1,44 @@
+.my-account {
+  padding-top: 40px;
+  @include mobile {
+    padding-top: 80px;
+  }
+  .account-container {
+    .account-login-inner h3 {
+      color: $main;
+      font-size: 24px;
+      text-transform: inherit;
+    }
+    .lost_password {
+      margin-top: 20px;
+      a {
+        color: #858585;
+        text-decoration: underline;
+      }
+    }
+    .woocommerce-form-login__rememberme {
+      margin: 20px 0;
+      span {
+        color: #595959;
+      }
+    }
+  }
+  .account-login-inner.login {
+    padding: 20px 15px;
+    @include mobile {
+      padding: 40px 30px;
+    }
+  }
+  .account-login-inner.register {
+    padding: 20px 15px;
+    @include mobile {
+      padding: 40px 30px;
+    }
+    background: rgba(33, 64, 154, 0.1);
+
+    input[type="text"],
+    input[type="password"] {
+      background-color: transparent !important;
+    }
+  }
+}
