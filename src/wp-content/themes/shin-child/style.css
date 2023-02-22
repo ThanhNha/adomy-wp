@@ -1,7 +1,16 @@
 /*
-Theme Name: Adomy Child
-Description: This is a child theme for Adomy 
-Author: The Shin 
-Template: Adony 
+Theme Name: Shin Child
+Description: This is a child theme for Shin Theme
+Author: UX Themes
+Template: shin
 Version: 3.0
 */
+
+/*************** ADD CUSTOM CSS HERE.   ***************/
+
+
+@media only screen and (max-width: 48em) {
+/*************** ADD MOBILE ONLY CSS HERE  ***************/
+
+
+}

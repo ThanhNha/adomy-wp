@@ -1,1 +1,1 @@
-const shin=0;
+$("#shin").attr("maxlength","6");
