@@ -2,22 +2,22 @@
 /**
  * The Template for previewing blocks.
  *
- * @package flatsome
+ * @package          Flatsome\Templates
+ * @flatsome-version 3.16.0
  */
 
 show_admin_bar(false);
 if ( ! current_user_can( 'edit_posts' ) ) die;
 ?>
 <!DOCTYPE html>
-<!--[if lte IE 9 ]><html class="ie lt-ie9" <?php language_attributes(); ?>> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html <?php language_attributes(); ?>> <!--<![endif]-->
+<html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 <?php do_action('flatsome_before_page' ); ?>
 <?php do_action('flatsome_after_header'); ?>
 <div id="wrapper">

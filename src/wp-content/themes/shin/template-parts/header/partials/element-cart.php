@@ -1,5 +1,12 @@
-<?php if(is_woocommerce_activated() && flatsome_is_wc_cart_available() ) { ?>
 <?php
+/**
+ * Cart element.
+ *
+ * @package          Flatsome\Templates
+ * @flatsome-version 3.16.0
+ */
+
+if(is_woocommerce_activated() && flatsome_is_wc_cart_available() ) {
   // Get Cart replacement for catalog_mode
   if(get_theme_mod('catalog_mode')) { get_template_part('template-parts/header/partials/element','cart-replace'); return;}
   $cart_style = get_theme_mod('header_cart_style','dropdown');
@@ -25,7 +32,7 @@
 
 <?php  if($cart_total || $cart_title) { ?>
 <span class="header-cart-title">
-  <?php if($cart_title) { ?> <?php _e('Cart', 'woocommerce'); ?> <?php } ?>
+  <?php if($cart_title) { ?> <?php _e('Giỏ hàng', 'woocommerce'); ?> <?php } ?>
   <?php /* divider */ if($cart_total && $cart_title) { ?>/<?php } ?>
   <?php if($cart_total) { ?>
     <span class="cart-price"><?php echo WC()->cart->get_cart_subtotal(); ?></span>

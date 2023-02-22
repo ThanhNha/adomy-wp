@@ -13,6 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
  * @version 3.3.0
+ * @flatsome-version 3.16.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -35,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				$selected_category  = isset( $_REQUEST['product_cat'] ) ? $_REQUEST['product_cat'] : '';
 
 				echo '<select class="search_categories resize-select mb-0" name="product_cat">';
-				echo '<option value=""' . selected( '', $selected_category, false ) . '>' . esc_html__( 'All', 'flatsome' ) . '</option>';
+				echo '<option value=""' . selected( '', $selected_category, false ) . '>' . esc_html__( 'Tất cả', 'flatsome' ) . '</option>';
 
 				foreach ( $product_categories as $value ) {
 					if ( $value && ! $value->parent ) {

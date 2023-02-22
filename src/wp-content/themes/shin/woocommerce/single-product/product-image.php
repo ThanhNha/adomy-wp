@@ -10,9 +10,10 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
- * @version 3.5.1
+ * @see              https://docs.woocommerce.com/document/template-structure/
+ * @package          WooCommerce/Templates
+ * @version          3.5.1
+ * @flatsome-version 3.16.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -74,9 +75,6 @@ if(get_theme_mod('product_lightbox','default') == 'disabled'){
 
   <?php do_action('flatsome_sale_flash'); ?>
 
-  <div class="image-tools absolute top show-on-hover right z-3">
-    <?php do_action('flatsome_product_image_tools_top'); ?>
-  </div>
 
   <figure class="woocommerce-product-gallery__wrapper <?php echo implode(' ', $slider_classes); ?>"
         data-flickity-options='{
@@ -84,11 +82,10 @@ if(get_theme_mod('product_lightbox','default') == 'disabled'){
                 "wrapAround": true,
                 "autoPlay": false,
                 "prevNextButtons":true,
-                "adaptiveHeight": true,
                 "imagesLoaded": true,
                 "lazyLoad": 1,
                 "dragThreshold" : 15,
-                "pageDots": false,
+                "pageDots": true,
                 "rightToLeft": <?php echo $rtl; ?>
        }'>
     <?php
@@ -105,11 +102,6 @@ if(get_theme_mod('product_lightbox','default') == 'disabled'){
     do_action( 'woocommerce_product_thumbnails' );
     ?>
   </figure>
-
-  <div class="image-tools absolute bottom left z-3">
-    <?php do_action('flatsome_product_image_tools_bottom'); ?>
-  </div>
 </div>
 <?php do_action('flatsome_after_product_images'); ?>
 
-<?php wc_get_template( 'woocommerce/single-product/product-gallery-thumbnails.php' ); ?>
