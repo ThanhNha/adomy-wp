@@ -65,3 +65,15 @@ add_action('init', function () {
         remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
     }
 });
+
+//Disable update WP
+add_filter('auto_update_core ','__return_false');
+function remove_update_notifications( $value ) {
+
+    if ( isset( $value ) && is_object( $value ) ) {
+        unset( $value->response[ 'lifterlms/lifterlms.php' ] );
+    }
+
+    return $value;
+}
+add_filter( 'site_transient_update_plugins', 'remove_update_notifications' );

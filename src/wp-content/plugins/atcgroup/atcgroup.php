@@ -44,7 +44,7 @@ function custom_loginlogo_url($url) {
 function my_login_stylesheet() {?>
 	<style type="text/css">
 		body.login div#login h1 a {
-			background-image: url("/wp-content/uploads/2022/08/logo-1.png");
+			/* background-image: url("/wp-content/uploads/2022/08/logo-1.png"); */
 			width: 100%;
             background-size: 48%;
         }

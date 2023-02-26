@@ -45,5 +45,15 @@ function shin_acf_init_block_types()
             'keywords'          => array('core', 'space', 'Shin'),
             'mode'              => 'edit', // auto, preview, edit
         ));
+        acf_register_block_type(array(
+            'name'              => 'Product',
+            'title'             => __('Product'),
+            'description'       => __('A custom Spacing block.'),
+            'render_template'   => 'site-structure/blocks/product/index.php',
+            'category'          => 'shin-blocks',
+            'icon'              => 'admin-customizer',
+            'keywords'          => array('core', 'space', 'Shin'),
+            'mode'              => 'edit', // auto, preview, edit
+        ));
     }
 }
