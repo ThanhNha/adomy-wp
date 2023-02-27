@@ -19,8 +19,7 @@ function data_fetch(){
     
     $the_query = new WP_Query( 
         array( 
-            'posts_per_page' => -1, 
-            's' => esc_attr( $_POST['keyword'] ), 
+            'posts_per_page' => 8, 
             'post_type' => array('product'),
             
             'tax_query' => array(
@@ -33,12 +32,21 @@ function data_fetch(){
            )
         ) 
     );
+    $cat = get_the_category_by_ID($product_cat_id);
+    echo $cat;
+
     if( $the_query->have_posts() ) {
       echo '<div class="row large-columns-4 medium-columns-3 small-columns-2 row-small">';
-      while( $the_query->have_posts() ): $the_query->the_post(); ?>
+      while( $the_query->have_posts() ): $the_query->the_post();
+      $id = get_the_ID();
+      $image = get_post_thumbnail_id($id);
+      $product = wc_get_product($id);
+
+      
+      ?>
 
           <div
-      class="product-small col has-hover product type-product post-<?php echo get_the_ID()?> status-publish first instock product_cat-jomashop product_tag-man product_tag-river-island product_tag-t-shirt has-post-thumbnail shipping-taxable purchasable product-type-simple"
+      class="product-small col has-hover product type-product post-<?php echo $id?> status-publish first instock product_cat-jomashop product_tag-man product_tag-river-island product_tag-t-shirt has-post-thumbnail shipping-taxable purchasable product-type-simple"
     >
       <div class="col-inner">
         <div class="badge-container absolute left top z-1"></div>
@@ -49,7 +57,13 @@ function data_fetch(){
                 href="<?php echo esc_url( post_permalink() ); ?>"
                 aria-label="<?php the_title();?>"
               >
-              <?php the_post_thumbnail('thumbnail')?>
+              <?php
+              if( $image != 10){
+                echo wp_get_attachment_image( $image, $size, "", array( "class" => "attachment-woocommerce_thumbnail size-woocommerce_thumbnail" ) );
+              } else{
+                echo '<img width="247" height="247" src="wp-content/uploads/woocommerce-placeholder.png" class="woocommerce-placeholder wp-post-image" alt="Placeholder" loading="lazy">';
+              }
+              ?>
               </a>
             </div>
             <div class="image-tools is-small top right show-on-hover">
@@ -62,19 +76,19 @@ function data_fetch(){
                 </button>
                 <div class="wishlist-popup dark">
                   <div
-                    class="yith-wcwl-add-to-wishlist add-to-wishlist-<?php echo get_the_ID()?> wishlist-fragment on-first-load"
-                    data-fragment-ref="<?php echo get_the_ID()?>"
-                    data-fragment-options='{"base_url":"","in_default_wishlist":false,"is_single":false,"show_exists":false,"product_id":<?php echo get_the_ID()?>,"parent_product_id":<?php echo get_the_ID()?>,"product_type":"simple","show_view":false,"browse_wishlist_text":"Browse wishlist","already_in_wishslist_text":"The product is already in your wishlist!","product_added_text":"Product added!","heading_icon":"fa-heart-o","available_multi_wishlist":false,"disable_wishlist":false,"show_count":false,"ajax_loading":false,"loop_position":"after_add_to_cart","item":"add_to_wishlist"}'
+                    class="yith-wcwl-add-to-wishlist add-to-wishlist-<?php echo $id?> wishlist-fragment on-first-load"
+                    data-fragment-ref="<?php echo $id?>"
+                    data-fragment-options='{"base_url":"","in_default_wishlist":false,"is_single":false,"show_exists":false,"product_id":<?php echo $id?>,"parent_product_id":<?php echo $id?>,"product_type":"simple","show_view":false,"browse_wishlist_text":"Browse wishlist","already_in_wishslist_text":"The product is already in your wishlist!","product_added_text":"Product added!","heading_icon":"fa-heart-o","available_multi_wishlist":false,"disable_wishlist":false,"show_count":false,"ajax_loading":false,"loop_position":"after_add_to_cart","item":"add_to_wishlist"}'
                   >
                     <!-- ADD TO WISHLIST -->
 
                     <div class="yith-wcwl-add-button">
                       <a
-                        href="?add_to_wishlist=<?php echo get_the_ID()?>;_wpnonce=0cbb51d2a5"
+                        href="?add_to_wishlist=<?php echo $id?>;_wpnonce=0cbb51d2a5"
                         class="add_to_wishlist single_add_to_wishlist"
-                        data-product-id="<?php echo get_the_ID()?>"
+                        data-product-id="<?php echo $id?>"
                         data-product-type="simple"
-                        data-original-product-id="<?php echo get_the_ID()?>"
+                        data-original-product-id="<?php echo $id?>"
                         data-title="Add to wishlist"
                         rel="nofollow"
                       >
@@ -91,16 +105,6 @@ function data_fetch(){
             <div
               class="image-tools is-small hide-for-small bottom left show-on-hover"
             ></div>
-            <div
-              class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover"
-            >
-              <a
-                class="quick-view quick-view-added"
-                data-prod="<?php echo get_the_ID()?>"
-                href="#quick-view"
-                >Quick View</a
-              >
-            </div>
           </div>
 
           <div class="box-text box-text-products">
@@ -108,7 +112,10 @@ function data_fetch(){
               <p
                 class="category uppercase is-smaller no-text-overflow product-cat op-7"
               >
-                Jomashop
+                <?php 
+                  echo  $product->cat_name;
+                ?>
+                
               </p>
               <p class="name product-title woocommerce-loop-product__title">
                 <a
@@ -132,7 +139,7 @@ function data_fetch(){
                 ><span class="woocommerce-Price-amount amount"
                   ><bdi
                     ><span class="woocommerce-Price-currencySymbol">$</span
-                    >19.00</bdi
+                    ><?php echo $product->get_price_html()?></bdi
                   ></span
                 ></span
               >

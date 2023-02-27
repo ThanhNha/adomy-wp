@@ -37,9 +37,10 @@ $args = array(
    
     <div class="row">
       <div class="col small-12 large-12">
-          <div class="home-tab-categories">
+          <div class="tabbed-content home-tab-categories">
             <ul
-              class="slider"
+              class="nav nav-line slider nav-uppercase nav-size-normal nav-left"
+              role="tablist"
               data-flickity-options='{
                 "contain": true,
                 "cellAlign": "left",
@@ -47,17 +48,20 @@ $args = array(
                 :true, "pageDots" :
                 false, "rightToLeft" : false }'
             >
-              <?php
-              foreach ( $categories as $category ) { ?>
-              <li id="tab-son-mÔi">
+            <?php
+            $index = 0;
+              foreach ( $categories as $category ) { $index++;?>
+              <li id="<?php echo $category->cat_ID ;?>"  class="tab has-icon <?php if($index === 1)  {echo 'active'; }?>" role="presentation">
                 <a onclick="fetch(<?php echo $category->cat_ID ; ?>)"
                 href="#<?php echo $category->cat_ID ; ?> "
-                  ><span class="uppercase"><?php echo $category->name ; ?></span></a
+                role="tab"
+                  aria-selected="true"
+                  aria-controls="<?php echo $category->slug ; ?><" ><span class="uppercase"><?php echo $category->name ; ?></span></a
                 >
               </li>
 
               <?php } ?>
-              
+
             </ul>
           </div>
           <div class="search_bar">
