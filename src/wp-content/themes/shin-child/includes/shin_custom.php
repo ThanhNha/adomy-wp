@@ -1,7 +1,7 @@
 <?php
 add_action('wp_enqueue_scripts', 'shin_scripts');
 function shin_scripts() {
-    $version = '1.2.0';
+    $version = '1.2.1';
 
     // Load CSS
     wp_enqueue_style('main-style-css', THEME_URL . '-child' . '/assets/main/main.css', array(), $version, 'all');
