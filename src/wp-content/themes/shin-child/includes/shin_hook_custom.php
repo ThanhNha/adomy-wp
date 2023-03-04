@@ -37,17 +37,3 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 function woocommerce_template_single_excerpt() {
         return;
 }
-
-add_filter('woocommerce_after_shop_loop_item_title', 'woocommerce_after_cart_item_name', 10, 2);
-function woocommerce_after_cart_item_name( $cart_item, $cart_item_key  ){
-    $product      = wc_get_product( $cart_item['product_id'] );
-    $rating_count = $product->get_rating_count();
-    $review_count = $product->get_review_count();
-    $average      = $product->get_average_rating();
-    if ( $rating_count > 0 ) : ?>
-        <div class="woocommerce-product-rating">
-            <?php echo wc_get_rating_html( $average, $rating_count ); // WPCS: XSS ok. ?>
-            <div class="count"><?php echo esc_html( $review_count ); ?> Reviews</div>
-        </div>
-    <?php endif;
-}

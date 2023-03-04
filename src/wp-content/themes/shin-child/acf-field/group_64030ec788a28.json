@@ -1,11 +1,12 @@
 {
-    "key": "group_6398590035b1c",
-    "title": "shin",
+    "key": "group_64030ec788a28",
+    "title": "Product By Catrgories",
     "fields": [
         {
-            "key": "field_6398591e8c534",
-            "label": "title",
+            "key": "field_64030ec8533c0",
+            "label": "Title",
             "name": "title",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -16,10 +17,10 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         }
     ],
     "location": [
@@ -27,7 +28,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/shin"
+                "value": "acf\/product"
             }
         ]
     ],
@@ -40,5 +41,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670928714
+    "modified": 1677922040
 }
