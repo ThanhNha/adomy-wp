@@ -41,14 +41,14 @@ $repeater['row_spacing']  = 'small';
 
 if ( $related_products ) : ?>
 
-	<div class="related related-products-wrapper product-section">
+	<div class="related container related-products-wrapper product-section">
 
 		<?php
-		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Related products', 'woocommerce' ) );
+		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Các sản phẩm tương tự', 'woocommerce' ) );
 
 		if ( $heading ) :
 			?>
-			<h3 class="product-section-title container-width product-section-title-related pt-half pb-half uppercase">
+			<h3 class="product-section-title container-width product-section-title-related pt-half pb-half">
 				<?php echo esc_html( $heading ); ?>
 			</h3>
 		<?php endif; ?>
