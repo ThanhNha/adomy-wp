@@ -8,11 +8,11 @@
 
 ?>
 <div class="product-container">
-  <div class="product-main">
-    <div class="row content-row mb-0">
+    <div class="product-main">
+        <div class="row content-row mb-0">
 
-    	<div class="product-gallery large-<?php echo flatsome_option('product_image_width'); ?> col">
-    	<?php
+            <div class="product-gallery large-<?php echo flatsome_option('product_image_width'); ?> col">
+                <?php
     		/**
     		 * woocommerce_before_single_product_summary hook
     		 *
@@ -21,17 +21,17 @@
     		 */
     		do_action( 'woocommerce_before_single_product_summary' );
     	?>
-    	</div>
+            </div>
 
-    	<div class="product-info summary col-fit col entry-summary <?php flatsome_product_summary_classes();?>">
+            <div class="product-info summary col-fit col entry-summary <?php flatsome_product_summary_classes();?>">
 
-    		<?php
+                <?php
     			/**
     			 * woocommerce_single_product_summary hook
     			 *
     			 * @hooked woocommerce_template_single_title - 5
-    			 * @hooked woocommerce_template_single_rating - 10
     			 * @hooked woocommerce_template_single_price - 10
+    			 * @hooked woocommerce_template_single_rating - 10
     			 * @hooked woocommerce_template_single_excerpt - 20
     			 * @hooked woocommerce_template_single_add_to_cart - 30
     			 * @hooked woocommerce_template_single_meta - 40
@@ -40,11 +40,11 @@
     			do_action( 'woocommerce_single_product_summary' );
     		?>
 
-    	</div>
+            </div>
 
-    	<div id="product-sidebar" class="mfp-hide">
-    		<div class="sidebar-inner">
-    			<?php
+            <div id="product-sidebar" class="mfp-hide">
+                <div class="sidebar-inner">
+                    <?php
     				do_action('flatsome_before_product_sidebar');
     				/**
     				 * woocommerce_sidebar hook
@@ -57,15 +57,15 @@
     					dynamic_sidebar('shop-sidebar');
     				}
     			?>
-    		</div>
-    	</div>
+                </div>
+            </div>
 
+        </div>
     </div>
-  </div>
 
-  <div class="product-footer">
-  	<div class="container">
-    		<?php
+    <div class="product-footer">
+        <div class="container">
+            <?php
     			/**
     			 * woocommerce_after_single_product_summary hook
     			 *
@@ -75,6 +75,6 @@
     			 */
     			do_action( 'woocommerce_after_single_product_summary' );
     		?>
+        </div>
     </div>
-  </div>
 </div>

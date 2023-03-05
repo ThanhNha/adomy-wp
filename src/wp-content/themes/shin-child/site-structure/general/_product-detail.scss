@@ -10,9 +10,12 @@
       margin-bottom: 20px;
 
       .price {
+        span{
+          color: $main;
+        }
         del {
           font-size: 18px;
-          color: #858585;
+          color: #233559;
         }
         ins {
           bdi {
@@ -77,10 +80,58 @@
       color: $main;
       font-size: 14px;
     }
+    .product-short-description{
+      color: $main;
+      font-size: 16px ;
+    }
+   
     .cart {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
+      &.variations_form{
+        display: block;
+      }
+      .variations{
+        .label{
+          width: 30% !important;
+
+          label{
+            color: $main;
+            font-weight: 400;
+            font-size: 16px;
+          }
+          .woo-selected-variation-item-name{
+            display: none;
+          }
+          
+        }
+        
+        
+        .woo-variation-items-wrapper{
+          .variable-item:not(.radio-variable-item).button-variable-item.selected:not(.no-stock){
+            background: $main;
+            border: none !important;color: white;
+          }
+          .variable-item:not(.radio-variable-item).button-variable-item{
+            min-width: 50px !important;
+            margin-right: 10px;
+          }
+        }
+        tbody{
+          tr:first-child{
+            display: flex;
+            align-items: center;
+          }
+          
+        }
+      }
+      .single_variation_wrap{
+        width: 100%;
+        .woocommerce-variation-add-to-cart {
+          display: flex;
+          align-items: center;
+        }
+      }
       .product-variations {
         width: 100%;
         display: flex;
