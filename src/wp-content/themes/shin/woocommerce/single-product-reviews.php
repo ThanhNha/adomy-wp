@@ -84,27 +84,26 @@ $review_ratings_enabled = wc_review_ratings_enabled();
 														echo '12';
 													} ?> col">
 			<div id="review_form" class="col-inner">
-				<div class="review-form-inner has-border">
+				<div class="review-form-inner">
 					<?php
 					$commenter    = wp_get_current_commenter();
 					$comment_form = array(
 						/* translators: %s is product title */
-						'title_reply'          => have_comments() ? esc_html__('Add a review', 'woocommerce') : sprintf(esc_html__('Be the first to review &ldquo;%s&rdquo;', 'woocommerce'), get_the_title()),
+						'title_reply'          => have_comments() ? esc_html__('VIẾT ĐÁNH GIÁ', 'woocommerce') : sprintf(esc_html__('Be the first to review &ldquo;%s&rdquo;', 'woocommerce'), get_the_title()),
 						/* translators: %s is product title */
 						'title_reply_to'       => esc_html__('Leave a Reply to %s', 'woocommerce'),
 						'title_reply_before'   => '<h3 id="reply-title" class="comment-reply-title">',
 						'title_reply_after'    => '</h3>',
 						'comment_notes_before' => '',
 						'comment_notes_after'  => '',
-						'label_submit'         => esc_html__('Submit', 'woocommerce'),
+						'label_submit'         => esc_html__('GỬI ĐÁNH GIÁ', 'woocommerce'),
 						'logged_in_as'         => '',
 						'comment_field'        => '',
 					);
-
 					$name_email_required = (bool) get_option('require_name_email', 1);
 					$fields              = array(
 						'author' => array(
-							'label'    => __('Name', 'woocommerce'),
+							'label'    => __('Họ và tên', 'woocommerce'),
 							'type'     => 'text',
 							'value'    => $commenter['comment_author'],
 							'required' => $name_email_required,
@@ -139,7 +138,7 @@ $review_ratings_enabled = wc_review_ratings_enabled();
 					}
 
 					if ($review_ratings_enabled) {
-						$comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating">' . esc_html__('Your rating', 'woocommerce') . (wc_review_ratings_required() ? '&nbsp;<span class="required">*</span>' : '') . '</label><select name="rating" id="rating" required>
+						$comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating">' . (wc_review_ratings_required() ? '&nbsp;<span class="required">*</span>' : '') . '</label><select name="rating" id="rating" required>
 						<option value="">' . esc_html__('Rate&hellip;', 'woocommerce') . '</option>
 						<option value="5">' . esc_html__('Perfect', 'woocommerce') . '</option>
 						<option value="4">' . esc_html__('Good', 'woocommerce') . '</option>
@@ -148,8 +147,7 @@ $review_ratings_enabled = wc_review_ratings_enabled();
 						<option value="1">' . esc_html__('Very poor', 'woocommerce') . '</option>
 					</select></div>';
 					}
-
-					$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__('Your review', 'woocommerce') . '&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" required></textarea></p>';
+					$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__('Đánh giá của bạn', 'woocommerce') . '</label><textarea id="comment" name="comment" cols="45" rows="8" required></textarea></p>';
 
 					comment_form(apply_filters('woocommerce_product_review_comment_form_args', $comment_form));
 					?>

@@ -6,8 +6,8 @@ input[type="text"],
 input[type="url"],
 input[type="password"],
 textarea {
-  border: 1px solid rgba(35, 53, 89, 0.5);
-  background-color: transparent;
+  border: 1px solid rgba(35, 53, 89, 0.5) !important;
+  background-color: transparent !important;
 }
 .select-resize-ghost,
 .select2-container .select2-choice,
@@ -40,8 +40,8 @@ input[type="submit"],
 input[type="submit"].button {
   color: #fff;
   font-weight: normal;
-  background-color: #233559;
-  margin-bottom: 0px;
+  background-color: #233559 !important;
+  margin-bottom: 0px ;
 }
 .woocommerce-form-login .button {
   color: #fff;

@@ -50,7 +50,7 @@ $panel_count = 0;
 
 if ( ! empty( $product_tabs ) ) : ?>
 
-	<div class="woocommerce-tabs wc-tabs-wrapper container tabbed-content">
+	<div class="woocommerce-tabs wc-tabs-wrapper tabbed-content">
 		<ul class="tabs wc-tabs product-tabs small-nav-collapse <?php flatsome_product_tabs_classes(); ?>" role="tablist">
 			<?php foreach ( $product_tabs as $key => $product_tab ) : ?>
 				<li class="<?php echo esc_attr( $key ); ?>_tab <?php if ( $tab_count == 0 ) echo 'active'; ?>" id="tab-title-<?php echo esc_attr( $key ); ?>" role="presentation">
