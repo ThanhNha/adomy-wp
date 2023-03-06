@@ -52,6 +52,8 @@
     border-radius: 5px;
     border: none;
     padding: 14px;
+    border: none !important;
+    background-color: #F8F8F8 !important;
   }
   // .header-search-form {
   //   display: none !important;
@@ -123,6 +125,8 @@
     border-radius: 5px;
     border: none;
     padding: 14px;
+    border: none !important;
+    background-color: #F8F8F8 !important;
   }
   .account-link.account-login,
   .header-cart-link {

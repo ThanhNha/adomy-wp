@@ -145,3 +145,11 @@ input[type="submit"].button {
   border-color: $red;
   color: #fff;
 }
+
+.woocommerce-variation-price{
+  border-top: none !important ;
+}
+.star-rating:before, .woocommerce-page .star-rating:before{
+
+  color: $main !important;
+}

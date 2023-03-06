@@ -30,6 +30,9 @@
     }
   }
   aside {
+    .is-divider{
+      display: none;
+    }
     .slider-labels {
       margin-top: 10px;
     }
