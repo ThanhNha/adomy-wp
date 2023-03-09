@@ -39,14 +39,41 @@ function woocommerce_custom_single_add_to_cart_text()
 }
 // remove product meta
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
-//remove product short description
-// remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
-// add_action('woocommerce_single_product_summary', 'shin_woocommerce_template_single_excerpt', 20);
 
-// function shin_woocommerce_template_single_excerpt()
-// {
-     
-// }
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
 
 add_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 25);
+
+//Change sort text 
+add_filter('gettext', 'theme_sort_change', 20, 3);
+function theme_sort_change($translated_text, $text, $domain){
+
+     if (is_woocommerce()) {
+
+          switch ($translated_text) {
+
+               case 'Sort by latest':
+
+                    $translated_text = __('Sắp xếp theo mới nhất', 'theme_text_domain');
+                    break;
+               case 'Sort by popularity':
+
+                    $translated_text = __('Sắp xếp theo mức độ phổ biến', 'theme_text_domain');
+                    break;
+               case 'Sort by average rating':
+
+                    $translated_text = __('Sắp xếp theo đánh giá', 'theme_text_domain');
+                    break;
+               case 'Sort by price: low to high':
+
+                    $translated_text = __('Sắp xếp theo giá: thấp đến cao', 'theme_text_domain');
+                    break;
+               case 'Sort by price: high to low':
+
+                    $translated_text = __('Sắp xếp theo giá: cao đến thấp', 'theme_text_domain');
+                    break;
+
+          }
+     }
+     return $translated_text;
+}

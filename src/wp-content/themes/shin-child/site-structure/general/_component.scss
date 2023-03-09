@@ -153,3 +153,13 @@ input[type="submit"].button {
 
   color: $main !important;
 }
+
+select.orderby {
+  border: none;
+  background: #fff;
+  width: 100%;
+  padding-right: 10px;
+  color: $main;
+  cursor: pointer;
+  font-size: 13px;
+}
